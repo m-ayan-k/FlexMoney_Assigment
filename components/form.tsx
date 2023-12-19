@@ -26,14 +26,14 @@ type IFormInput  = {
 
 export default function Form() {
   const router = useRouter();
-  const [formData, setformData] = useState<Inputs>()
+  const [formData, setformData] = useState<IFormInput>()
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors }
-  } = useForm<Inputs>({
+  } = useForm<IFormInput>({
     defaultValues: {
       name: '',
       email: '',
