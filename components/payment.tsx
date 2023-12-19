@@ -27,27 +27,29 @@ const PaymentForm: React.FC<{ id: string }> = ({ id }) => {
   const router = useRouter();
 
   const processForm: SubmitHandler<IFormInput > = async(formdata) =>{
-    console.log(formdata);
+    // console.log(formdata);
     try{
       const data = await fetch('/api/payment', {
         method: 'POST',
-        body: JSON.stringify({amount: 500,candidateId:id}),
+        body: JSON.stringify({amount: 500, usersId:id}),
       });
 
       if (!data.ok) {
         throw new Error('Network response was not ok');
       }
       const result = await data.json();
+      console.log(result);
+
+      alert("Payment Successfull");
     }
     catch(error){
       console.error(error);
     }
+
     reset();
     setTimeout(() => {
-        alert("Payment Successfull");
         router.push('/');
-      }, 5000);
-    
+      }, 3500);
   }
 
   return (

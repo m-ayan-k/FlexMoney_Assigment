@@ -48,7 +48,7 @@ export default function Form() {
   const ageOptions = Array.from({ length: 100 }, (_, index) => index + 1);
   const processForm: SubmitHandler<IFormInput > = async (formdata) => {
 
-    console.log(formdata);
+    // console.log(formdata);
     try{
       const data = await fetch('/api/form', {
         method: 'POST',
