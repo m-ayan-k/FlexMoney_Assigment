@@ -9,7 +9,7 @@ enum GenderEnum {
   other = "other",
 }
 
-enum GenderEnum {
+enum TimingEnum {
   "6-7AM" = "6-7 AM",
   "7-8AM" = "7-8 AM",
   "8-9AM" = "8-9 AM",
