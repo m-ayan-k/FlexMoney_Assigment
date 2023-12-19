@@ -37,9 +37,9 @@ export default function Form() {
     defaultValues: {
       name: '',
       email: '',
-      gender:'',
+      gender:GenderEnum.Male,
       age:'',
-      timing:''
+      timing:TimingEnum."6-7AM",
     }
   })
 
