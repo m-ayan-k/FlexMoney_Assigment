@@ -10,7 +10,7 @@ type IFormInput  = {
   cvv:string
 }
 
-const PaymentForm: React.FC<{ id: string }> = ({ id }) => {
+const PaymentForm: React.FC<{ id: any }> = ({ id }) => {
   const {
     register,
     handleSubmit,
