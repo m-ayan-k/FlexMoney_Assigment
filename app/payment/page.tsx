@@ -1,8 +1,19 @@
+'use client'
+
 import Image from 'next/image'
-import Form from '@/components/form'
 import PaymentForm from '@/components/payment'
+import { useEffect } from 'react';
+import { useRouter , useSearchParams} from 'next/navigation';
+
 
 export default function Home() {
+
+  const searchParams = useSearchParams()
+  const search = searchParams.get('id')
+  const router = useRouter();
+
+  // console.log(search);
+
   return (
     <div 
       className="
@@ -13,6 +24,7 @@ export default function Home() {
         sm:px-6 
         lg:px-8 
         bg-gray-100
+        h-full
       "
     >
     {/*<a href="https://www.flaticon.com/free-icons/dating-app-android" title="dating app android icons">Dating app android icons created by Creartive - Flaticon</a>*/}
@@ -27,10 +39,10 @@ export default function Home() {
             text-gray-900
           "
           >
-            Yoga Admission Form
+            Payment
         </h2>
       </div>
-      <Form/>      
+      <PaymentForm id={search} />      
   </div>
   )
 }
